@@ -20,6 +20,29 @@ figure img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Button styling for both <button> and .button */
+.button,
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--primary-color);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10em;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+/* Hover effect for buttons */
+.button:hover,
+button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
 /* Projects grid container */
 .projectsContainer {
     display: flex;

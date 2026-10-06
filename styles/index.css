@@ -1,204 +1,26 @@
-/* Sidebar (aside) styling */
-aside {
-    flex: 1;
-    min-width: 220px;
-    background: var(--background-color);
-    padding: 20px;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    margin-right: 20px;
+/* Home: hero + asymmetric 7/5 feature row */
+.hero { padding: 12px; min-height: 100vh; display: flex; }
+.hero-frame {
+  position: relative; flex: 1; min-height: calc(100vh - 24px); border-radius: var(--r-xl); overflow: hidden;
+  display: flex; align-items: flex-end; background: var(--bg-raised); isolation: isolate;
 }
-
-/* Sidebar list reset and spacing */
-aside ul {
-    list-style: none;
-    padding: 0;
+.hero-frame::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: var(--hero-image) center / cover no-repeat; transform: scale(1.08);
+  transition: transform 1.6s var(--ease);
 }
-
-aside ul li {
-    margin: 15px 0;
+body.loaded .hero-frame::before { transform: scale(1); }
+.hero-frame::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(10,10,10,.82) 0%, rgba(10,10,10,.7) 45%, rgba(10,10,10,.97) 100%);
 }
-
-aside ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color var(--transition-speed);
-}
-
-aside ul li a:hover {
-    color: var(--text-color); /* Using a hover color for better user experience */
-}
-
-/* Card layout improvements */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    margin-bottom: 32px;
-}
-
-.column {
-    flex: 1 1 320px;
-    max-width: 350px;
-    min-width: 260px;
-    display: flex;
-    justify-content: center;
-}
-
-/* Card container with shadow */
-.card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(79, 0, 11, 0.10);
-    margin: 0;
-    padding: 0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-/* Button styling for both <button> and .button */
-.button,
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background-color: var(--primary-color);
-    text-align: center;
-    cursor: pointer;
-    border-radius: 10em;
-    text-decoration: none;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
-}
-
-/* Hover effect for buttons */
-.button:hover,
-button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
-}
-
-/* Inner box padding */
-.box {
-    padding: 28px 24px 22px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-/* Clearfix for floated elements */
-.box::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Section layout: image and text side-by-side */
-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-/* Text content inside sections */
-section p,
-section ul,
-section ol {
-    flex: 1 1 55%;
-    max-width: 55%;
-    line-height: 1.6;
-}
-
-/* Section images */
-section img {
-    flex: 1 1 40%;
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-top: 1px;
-}
-
-/* Adjust spacing when image precedes text */
-section img + p,
-section img + ul {
-    margin-top: 20px;
-}
-
-/* Buttons (including anchor buttons) */
-button,
-a.button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 6px;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
-    cursor: pointer;
-}
-
-button:hover,
-a.button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
-}
-
-/* Improved mobile responsiveness for smaller screens */
-@media (max-width: 768px) {
-    section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    section p,
-    section ul,
-    section ol {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
-
-    section img {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
-
-    aside {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-}
-
+.hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding-bottom: 96px; padding-top: 160px; }
+.hero-content .subtitle { max-width: 640px; color: var(--text-muted); }
+.features { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 24px; }
+.feature-col { grid-column: span 7; }
+.feature-col--offset { grid-column: span 5; padding-top: 96px; }
 @media (max-width: 900px) {
-    .row {
-        gap: 20px;
-    }
-    .column {
-        min-width: 220px;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .row {
-        flex-direction: column;
-        gap: 16px;
-    }
-    .column {
-        min-width: 0;
-        max-width: 100%;
-    }
-    .box {
-        padding: 18px 10px 14px 10px;
-    }
+  .feature-col, .feature-col--offset { grid-column: 1 / -1; padding-top: 0; }
+  .card-feature { min-height: 420px; padding: 28px; }
+  .hero-content { padding-bottom: 64px; }
 }

@@ -4,145 +4,160 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0A0A">
     <meta name="description" content="Contact our team for inquiries, support, or partnership opportunities">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/contact me.css">
-    <title>Khubi Shah | UX Designer & Frontend Developer Portfolio</title>
+    <title>Khubi Shah | UX Designer &amp; Frontend Developer Portfolio</title>
   </head>
+
   <body>
-    <header>
-      <img src="images/logo.png" alt="KS_Logo" loading="lazy">
-      <h1>Khubi Shah</h1>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="KS_Logo" loading="lazy">
+        <span>Khubi Shah</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+      <nav id="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="contact_me.html" aria-current="page">Contact Me</a>
+        <a class="nav-link" href="about_me.html">About Me</a>
+      </nav>
     </header>
 
-  <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact_me.html">Contact Me</a>
-      <a href="about_me.html">About Me</a>
-    </nav>
+    <main id="main-content" class="contact-main">
+      <div class="page-header wrap">
+        <p class="eyebrow" data-reveal>Contact</p>
+        <h1 data-reveal style="--d:80ms">Contact Me</h1>
+      </div>
+      <div class="container wrap">
+        <div class="contact-grid">
+          <!-- Contact Form Section -->
+          <section class="contact-form-section card-feature" data-reveal>
+            <h2>Get in Touch - Send Us a Message</h2>
+            <p>Contact us about anything related to our company or services. We'll respond within 24 hours.</p>
 
-      <main id="main-content" class="contact-main">
-          <div class="container">
-              <div class="contact-grid">
-                  <!-- Contact Form Section -->
-                  <section class="contact-form-section">
-                      <h2>Get in Touch - Send Us a Message</h2>
-                      <p>Contact us about anything related to our company or services. We'll respond within 24 hours.</p>
-                      
-                      <form id="contact-form" action="/submit_contact" method="post" novalidate>
-                          <div class="form-group">
-                              <label for="name">Full Name *</label>
-                              <input type="text" id="name" name="name" required placeholder="Your name">
-                              <span class="error-message" aria-live="polite"></span>
-                          </div>
-
-                          <div class="form-row">
-                              <div class="form-group">
-                                  <label for="email">Email *</label>
-                                  <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                                  <span class="error-message" aria-live="polite"></span>
-                              </div>
-                              
-                              <div class="form-group">
-                                  <label for="phone">Phone Number</label>
-                                  <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                              <label for="company">Company</label>
-                              <input type="text" id="company" name="company" placeholder="Your company name">
-                          </div>
-
-                          <div class="form-group">
-                              <label for="subject">Subject *</label>
-                              <select id="subject" name="subject" required>
-                                  <option value="" disabled selected>Select a subject</option>
-                                  <option value="general">General Inquiry</option>
-                                  <option value="support">Technical Support</option>
-                                  <option value="sales">Sales Questions</option>
-                                  <option value="feedback">Product Feedback</option>
-                              </select>
-                              <span class="error-message" aria-live="polite"></span>
-                          </div>
-
-                          <div class="form-group">
-                              <label for="message">Message *</label>
-                              <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
-                              <span class="error-message" aria-live="polite"></span>
-                          </div>
-
-                          <button type="submit" class="submit-btn">
-                              <i class="fas fa-paper-plane"></i> Send Message
-                          </button>
-                      </form>
-                  </section>
-
-                  <!-- Contact Info Section -->
-                  <section class="contact-info-section">
-                      <h2>My Contact Information</h2>
-
-                      <div class="contact-method">
-                          <i class="fas fa-phone contact-icon"></i>
-                          <div>
-                              <h3>Phone</h3>
-                              <p><a href="tel:+61 470 264 583">+61 470 264 583</a></p>
-                          </div>
-                      </div>
-
-                      <div class="contact-method">
-                          <i class="fas fa-envelope contact-icon"></i>
-                          <div>
-                              <h3>Email</h3>
-                              <p><a href="mailto:Khubi.s@outlook.com">Khubi.s@outlook.com</a></p>
-                          </div>
-                      </div>
-
-                      <div class="business-hours">
-                          <h3>Business Hours</h3>
-                          <ul>
-                              <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
-                              <li>Saturday - Sunday:  Closed</li>
-                          </ul>
-                      </div>
-                  </section>
+            <form id="contact-form" action="/submit_contact" method="post" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+                <span class="error-message" aria-live="polite"></span>
               </div>
-          </div>
-      </main>
 
-      <footer class="contact-footer">
-          <div class="container">
-              <p>&copy; <span id="current-year">2025</span> Your Company Name. All rights reserved.</p>
-              <div class="social-links">
-                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                  <span class="error-message" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                </div>
               </div>
-          </div>
-      </footer>
 
-      <script>
-          // Simple current year script
-          document.getElementById('current-year').textContent = new Date().getFullYear();
-          
-          // Basic form validation
-          document.getElementById('contact-form').addEventListener('submit', function(e) {
-              let valid = true;
-              const requiredFields = this.querySelectorAll('[required]');
-              
-              requiredFields.forEach(field => {
-                  const error = field.nextElementSibling;
-                  if (!field.value.trim()) {
-                      error.textContent = 'This field is required';
-                      valid = false;
-                  } else {
-                      error.textContent = '';
-                  }
-              });
-              
-              if (!valid) e.preventDefault();
-          });
-      </script>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company name">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="sales">Sales Questions</option>
+                  <option value="feedback">Product Feedback</option>
+                </select>
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="submit-btn button">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </section>
+
+          <!-- Contact Info Section -->
+          <section class="contact-info-section" data-reveal style="--d:120ms">
+            <h2>My Contact Information</h2>
+
+            <div class="contact-method">
+              <i class="fas fa-phone contact-icon"></i>
+              <div>
+                <h3>Phone</h3>
+                <p><a href="tel:+61 470 264 583">+61 470 264 583</a></p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <i class="fas fa-envelope contact-icon"></i>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:Khubi.s@outlook.com">Khubi.s@outlook.com</a></p>
+              </div>
+            </div>
+
+            <div class="business-hours">
+              <h3>Business Hours</h3>
+              <ul>
+                <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+                <li>Saturday - Sunday:  Closed</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer contact-footer">
+      <div class="wordmark" aria-hidden="true">Khubi Shah</div>
+      <div class="footer-bar">
+        <p>&copy; <span id="current-year">2025</span> Your Company Name. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script>
+      // Simple current year script
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Basic form validation
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        let valid = true;
+        const requiredFields = this.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+          const error = field.nextElementSibling;
+          if (!field.value.trim()) {
+            error.textContent = 'This field is required';
+            valid = false;
+          } else {
+            error.textContent = '';
+          }
+        });
+
+        if (!valid) e.preventDefault();
+      });
+    </script>
   </body>
 </html>

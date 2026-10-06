@@ -1,123 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0A0A">
     <meta name="Khubi Shah" content="Projects page: Portfolio projects by Khubi Shah">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/projects.css">
-    <title>Khubi Shah | UX Designer & Frontend Developer Portfolio</title>
+    <title>Khubi Shah | UX Designer &amp; Frontend Developer Portfolio</title>
   </head>
 
   <body>
-    <header>
-      <img src="images/logo.png" alt="KS_Logo" loading="lazy">
-      <h1>Khubi Shah</h1>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="KS_Logo" loading="lazy">
+        <span>Khubi Shah</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+      <nav id="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-link" href="contact_me.html">Contact Me</a>
+        <a class="nav-link" href="about_me.html">About Me</a>
+      </nav>
     </header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact_me.html">Contact Me</a>
-      <a href="about_me.html">About Me</a>
-    </nav>
-
     <main>
-      <h2>Projects</h2>
-      <section id="projects">
-        <div class="projectsContainer">
-          <!-- Project 1 -->
-          <div class="projectCard">
-            <a href="https://github.com/Khubi114/Music-Player.git" class="projectTile" target="_blank">
+      <div class="page-header wrap">
+        <p class="eyebrow" data-reveal>Selected Work</p>
+        <h2 data-reveal style="--d:80ms">Projects</h2>
+      </div>
+      <section id="projects" class="wrap">
+        <div class="projects-grid">
+          <article class="project-card pc-1" data-reveal>
+            <a href="https://github.com/Khubi114/Music-Player.git" class="project-tile" target="_blank" rel="noopener">
               <figure>
-                <img src="images/music_player.png" alt="Project 1 Screenshot">
-                <figcaption>Music Player</figcaption>
+                <img src="images/music_player.png" alt="Project 1 Screenshot" loading="lazy">
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="tag">01</span>
+                <figcaption><span>Music Player</span><span class="chip" aria-hidden="true"></span></figcaption>
               </figure>
             </a>
-            <div class="projectContent">
+            <div class="project-content">
               <p>
                 Developed for Swinburne's Introduction to Programming unit, this interactive music player 
                 combines Ruby's architecture with Gosu's 2D rendering engine. The application features playback 
                 controls, and a dynamic GUI—demonstrating core CS principles like class inheritance.
               </p>
             </div>
-          </div>
-          <!-- Project 2 -->
-          <div class="projectCard">
-            <a href="https://github.com/Janet1411/project1.git" class="projectTile" target="_blank">
+          </article>
+          <article class="project-card pc-2" data-reveal>
+            <a href="https://github.com/Janet1411/project1.git" class="project-tile" target="_blank" rel="noopener">
               <figure>
-                <img src="images/website.png" alt="Project 2 Screenshot">
-                <figcaption>Solvex Website</figcaption>
+                <img src="images/website.png" alt="Project 2 Screenshot" loading="lazy">
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="tag">02</span>
+                <figcaption><span>Solvex Website</span><span class="chip" aria-hidden="true"></span></figcaption>
               </figure>
             </a>
-            <div class="projectContent">
+            <div class="project-content">
               <p>
                 This two-part Web Technology project implements a secure IT portal, transitioning from a 
                 front-end prototype (HTML/CSS) to a full-stack solution with SQL database integration and 
-                PHP authentication. 
+                PHP authentication.
               </p>
             </div>
-          </div>
-          <!-- Project 3 -->
-          <div class="projectCard">
-            <a href="https://github.com/Khubi114/Stop-watch.git" class="projectTile" target="_blank">
+          </article>
+          <article class="project-card pc-3" data-reveal>
+            <a href="https://github.com/Khubi114/Stop-watch.git" class="project-tile" target="_blank" rel="noopener">
               <figure>
-                <img src="images/stop_watch.png" alt="Project 3 Screenshot">
-                <figcaption>Stop Watch</figcaption>
+                <img src="images/stop_watch.png" alt="Project 3 Screenshot" loading="lazy">
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="tag">03</span>
+                <figcaption><span>Stop Watch</span><span class="chip" aria-hidden="true"></span></figcaption>
               </figure>
             </a>
-            <div class="projectContent">
+            <div class="project-content">
               <p>
                 Designed in Logisim, this digital stopwatch project integrates flip-flops,
                 counters, and a multiplexed display to achieve accurate start/stop/reset functionality—showcasing
                 low-level logic design and clock management for my Computer Systems unit at Swinburne.
               </p>
+              <a href="project1.html" class="button button--ghost"> Project Info</a>
             </div>
-            <a href="project1.html" class="button" target="_blank">Project Info</a>
-          </div>
-          <!-- Project 4 -->
-          <div class="projectCard">
-            <a href="https://github.com/Khubi114/Matchsticks.git" class="projectTile" target="_blank">
+          </article>
+          <article class="project-card pc-4" data-reveal>
+            <a href="https://github.com/Khubi114/Matchsticks.git" class="project-tile" target="_blank" rel="noopener">
               <figure>
-                <img src="images/matchsticks.png" alt="Project 4 Screenshot">
-                <figcaption>Matchsticks</figcaption>
+                <img src="images/matchsticks.png" alt="Project 4 Screenshot" loading="lazy">
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="tag">04</span>
+                <figcaption><span>Matchsticks</span><span class="chip" aria-hidden="true"></span></figcaption>
               </figure>
             </a>
-            <div class="projectContent">
+            <div class="project-content">
               <p>
                 This matchstick game, written in ARMlite assembly, pits the player against a strategic AI opponent.
                 This program was also created for my Computer Systems unit at Swinburne and it leverages conditional 
                 branching, stack operations, and bitwise logic to manage game state, enforce rules.
               </p>
             </div>
-          </div>
-            <!-- Project 5 -->
-          <div class="projectCard">
-            <a href="https://github.com/Khubi114/Matchsticks.git" class="projectTile" target="_blank">
+          </article>
+          <article class="project-card pc-5" data-reveal>
+            <a href="https://github.com/Khubi114/Matchsticks.git" class="project-tile" target="_blank" rel="noopener">
               <figure>
-                <img src="images/ai.png" alt="Project 5 Screenshot">
-                <figcaption>Cyber Security AI</figcaption>
+                <img src="images/ai.png" alt="Project 5 Screenshot" loading="lazy">
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="tag">05</span>
+                <figcaption><span>Cyber Security AI</span><span class="chip" aria-hidden="true"></span></figcaption>
               </figure>
             </a>
-            <div class="projectContent">
+            <div class="project-content">
               <p>
                 This matchstick game, written in ARMlite assembly, pits the player against a strategic AI opponent.
                 This program was also created for my Computer Systems unit at Swinburne and it leverages conditional 
                 branching, stack operations, and bitwise logic to manage game state, enforce rules.
               </p>
-          </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div id="footer"></div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright &copy; <span class="company-name">Khubi Shah</span></span>
-        </div>
+    <footer class="site-footer">
+      <div class="wordmark" aria-hidden="true">Khubi Shah</div>
+      <div class="footer-bar">
+        <p>Copyright &copy; <span class="company-name">Khubi Shah</span></p>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact_me.html">Contact Me</a>
+          <a href="about_me.html">About Me</a>
+        </nav>
       </div>
     </footer>
+    <script src="scripts/main.js" defer></script>
   </body>
 </html>

@@ -4,72 +4,103 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0A0A">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <script>document.documentElement.classList.add('js')</script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/about me.css">
-    <title>Khubi Shah | UX Designer & Frontend Developer Portfolio</title>
+    <title>Khubi Shah | UX Designer &amp; Frontend Developer Portfolio</title>
   </head>
 
   <body>
-    <header>
-      <img src="images/logo.png" alt="KS_Logo" loading="lazy">
-      <h1>Khubi Shah</h1>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="KS_Logo" loading="lazy">
+        <span>Khubi Shah</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+      <nav id="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="contact_me.html">Contact Me</a>
+        <a class="nav-link" href="about_me.html" aria-current="page">About Me</a>
+      </nav>
     </header>
 
-  <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact_me.html">Contact Me</a>
-      <a href="about_me.html">About Me</a>
-    </nav>
-
     <main>
-      <h2> About me </h2>
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <div class="box">
-                <h3>Khubi Shah</h3>
-                <p class="job"> Web Designer </p>
-                <!-- description taken from chatgpt  -->
-                <p>First-year Computer Science student passionate about front-end development, with a love for CSS and crafting seamless user experiences.</p>
-                <p> 105933114@student.swin.edu.au </p>
-                <p><a href="#section1" class="button"> Click to Know more </a></p>
-              </div>
+      <div class="page-header wrap">
+        <p class="eyebrow" data-reveal>Web Designer</p>
+        <h2 data-reveal style="--d:80ms">About me</h2>
+      </div>
+
+      <section class="wrap about-intro">
+        <div class="portrait" data-reveal aria-hidden="true">
+          <img src="images/logo.png" alt="">
+        </div>
+        <div class="about-card-col" data-reveal style="--d:120ms">
+          <div class="card-feature about-card">
+            <div class="box card-body">
+              <h3>Khubi Shah</h3>
+              <p class="job eyebrow"> Web Designer </p>
+              <!-- description taken from chatgpt  -->
+              <p>First-year Computer Science student passionate about front-end development, with a love for CSS and crafting seamless user experiences.</p>
+              <p class="email"> 105933114@student.swin.edu.au </p>
+              <a href="#section1" class="button button--ghost"> Click to Know more </a>
             </div>
           </div>
+        </div>
+      </section>
 
-      <aside>
-          <h2> A Little about My Company </h2>
-          <p> At Solvex, we specialize in crafting high-quality, custom web solutions that help businesses thrive in the digital world. Whether you're a startup in need of a landing page or an enterprise building a robust e-commerce platform, we deliver tailored, visually stunning, and user-friendly websites designed to elevate your brand and drive growth.
-          <p> Our team blends creativity, innovation, and technical excellence to turn your ideas into reality. We pride ourselves on being reliable partners—offering not just development, but long-term support and collaboration.</p>
-          <p> At Solvex, we believe in relationships. Our company culture reflects our values: trust, transparency, innovation, and a close-knit team spirit. When you work with us, you become part of the family. </p>
+      <section class="band section company">
+        <div class="wrap company-grid">
+          <aside>
+            <h2 data-reveal> A Little about My Company </h2>
           </aside>
-        
-      <table>
-        <caption> My Interests</caption>
-          <td> Books, Horror Movies, Music, Bikes and Cars </td>
-      </table>
+          <div class="company-copy" data-reveal style="--d:100ms">
+            <p> At Solvex, we specialize in crafting high-quality, custom web solutions that help businesses thrive in the digital world. Whether you're a startup in need of a landing page or an enterprise building a robust e-commerce platform, we deliver tailored, visually stunning, and user-friendly websites designed to elevate your brand and drive growth.</p>
+            <p> Our team blends creativity, innovation, and technical excellence to turn your ideas into reality. We pride ourselves on being reliable partners—offering not just development, but long-term support and collaboration.</p>
+            <p> At Solvex, we believe in relationships. Our company culture reflects our values: trust, transparency, innovation, and a close-knit team spirit. When you work with us, you become part of the family. </p>
+          </div>
+        </div>
+      </section>
 
-      <h2> Fun information about me</h2>
-      <section id="description">
-      <ul>
-        <li>
-          <h4 id="section1"> The Creative Coder</h4>
-          <div class="year">1st Year – Web Dev & UI/UX</div>
-          <p class="info">Color-coded notes, laptop always in hand. Passionate about beautiful, intuitive design.</p>
-          <p class="hometown"> Belong from a place known for it's flavorful street food and colorful festivals - India. Whether it's the smell of sizzling snacks in evening markets or the vibrant music and traditions during cultural celebrations, there's always something to enjoy. Growing up in this environment gave me a deep appreciation for heritage, hospitality, and the way food and festivals connect people.</p>
-        </li>
-      </ul>
+      <section class="section wrap interests">
+        <table data-reveal>
+          <caption class="eyebrow"> My Interests</caption>
+          <tbody><tr>
+          <td> Books, Horror Movies, Music, Bikes and Cars </td>
+          </tr></tbody>
+        </table>
+      </section>
+
+      <section id="description" class="wrap fun">
+        <h2 data-reveal> Fun information about me</h2>
+        <ul>
+          <li class="card-feature" data-reveal>
+            <h3 id="section1"> The Creative Coder</h3>
+            <div class="year tag tag--heritage">1st Year – Web Dev &amp; UI/UX</div>
+            <p class="info">Color-coded notes, laptop always in hand. Passionate about beautiful, intuitive design.</p>
+            <p class="hometown"> Belong from a place known for it's flavorful street food and colorful festivals - India. Whether it's the smell of sizzling snacks in evening markets or the vibrant music and traditions during cultural celebrations, there's always something to enjoy. Growing up in this environment gave me a deep appreciation for heritage, hospitality, and the way food and festivals connect people.</p>
+          </li>
+        </ul>
       </section>
     </main>
 
-    <footer>
-      <div id="footer"></div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright &copy; <span class="company-name">Khubi Shah</span></span>
-        </div>
+    <footer class="site-footer">
+      <div class="wordmark" aria-hidden="true">Khubi Shah</div>
+      <div class="footer-bar">
+        <p>Copyright &copy; <span class="company-name">Khubi Shah</span></p>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact_me.html">Contact Me</a>
+          <a href="about_me.html">About Me</a>
+        </nav>
       </div>
     </footer>
-
+    <script src="scripts/main.js" defer></script>
   </body>
 </html>

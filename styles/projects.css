@@ -1,132 +1,32 @@
-/* Layout for image and text side-by-side */
-figure {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin: 30px 0;
+/* Projects: asymmetric 12-column grid */
+.projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 96px; align-items: start; }
+.pc-1 { grid-column: 1 / 8; }
+.pc-2 { grid-column: 8 / 13; margin-top: 120px; }
+.pc-3 { grid-column: 1 / 6; }
+.pc-4 { grid-column: 6 / 13; margin-top: 120px; }
+.pc-5 { grid-column: 1 / 13; }
+.project-card { display: flex; flex-direction: column; gap: 24px; }
+.project-tile { display: block; text-decoration: none; border-radius: var(--r-lg); }
+.project-tile figure { position: relative; margin: 0; overflow: hidden; border-radius: var(--r-lg); border: 1px solid var(--border-default); background: var(--surface-card); }
+.pc-1 figure, .pc-4 figure { aspect-ratio: 4 / 3; }
+.pc-2 figure, .pc-3 figure { aspect-ratio: 4 / 5; }
+.pc-5 figure { aspect-ratio: 21 / 9; }
+.project-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease); }
+.scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.1) 40%, rgba(10,10,10,.88) 100%); }
+.project-tile .tag { position: absolute; top: 24px; left: 24px; background: rgba(10,10,10,.55); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: var(--text-primary); }
+.project-tile figcaption {
+  position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-size: clamp(18px, 2vw, 28px); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary);
 }
-
-/* Image styling inside figure */
-figure img {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Button styling for both <button> and .button */
-.button,
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background-color: var(--primary-color);
-    text-align: center;
-    cursor: pointer;
-    border-radius: 10em;
-    text-decoration: none;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
-}
-
-/* Hover effect for buttons */
-.button:hover,
-button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
-}
-
-/* Projects grid container */
-.projectsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 32px;
-}
-
-/* Each project card */
-.projectCard {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(79, 0, 11, 0.10);
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    margin-bottom: 16px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-
-.projectCard:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 24px rgba(79, 0, 11, 0.18);
-}
-
-.projectTile figure {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: underline;
-    text-decoration-color: var(--accent-color);
-}
-
-.projectTile img {
-    max-width: 100%;
-    border-radius: 12px 12px 0 0;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.projectTile figcaption {
-    font-weight: 600;
-    color: var(--primary-color);
-    padding: 10px 0 0 0;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-.projectContent {
-    padding: 18px 18px 16px 18px;
-    color: var(--text-color);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    text-align: left;
-    background: none;
-    position: static;
-}
-
-/* Responsive adjustments */
+.project-card { transition: transform 0.5s var(--ease); }
+.project-card:hover { transform: translateY(-8px); }
+.project-card:hover img { transform: scale(1.04); }
+.project-card:hover .chip { border-color: var(--text-primary); background-color: rgba(255,255,255,.12); transform: translate(4px, -4px); }
+.project-content { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; max-width: 640px; }
+.project-content p { color: var(--text-muted); font-size: 16px; line-height: 1.7; }
 @media (max-width: 900px) {
-    .projectsContainer {
-        gap: 18px;
-    }
-    .projectCard {
-        width: 90vw;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 600px) {
-    .projectsContainer {
-        flex-direction: column;
-        gap: 14px;
-    }
-    .projectCard {
-        width: 100%;
-        max-width: 100%;
-    }
-    .projectContent {
-        padding: 14px 8px 12px 8px;
-    }
+  .projects-grid { row-gap: 64px; }
+  .pc-1, .pc-2, .pc-3, .pc-4, .pc-5 { grid-column: 1 / -1; margin-top: 0; }
+  .pc-2 figure, .pc-3 figure { aspect-ratio: 4 / 3; }
+  .pc-5 figure { aspect-ratio: 16 / 9; }
 }

@@ -6,13 +6,13 @@
 }
 .hero-frame::before {
   content: ""; position: absolute; inset: 0; z-index: -2;
-  background: var(--hero-image) center / cover no-repeat; transform: scale(1.08);
+  background: var(--hero-image); background-size: cover; background-position: center; transform: scale(1.08);
   transition: transform 1.6s var(--ease);
 }
 body.loaded .hero-frame::before { transform: scale(1); }
 .hero-frame::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(10,10,10,.82) 0%, rgba(10,10,10,.7) 45%, rgba(10,10,10,.97) 100%);
+  background: linear-gradient(180deg, rgba(10,10,10,.2) 0%, rgba(10,10,10,.1) 45%, rgba(10,10,10,.6) 100%);
 }
 .hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding-bottom: 96px; padding-top: 160px; }
 .hero-content .subtitle { max-width: 640px; color: var(--text-muted); }
